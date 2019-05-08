@@ -11,10 +11,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*==============================
+ * Array Function prototype
+================================*/
 float array3D(float (*myA3)[3][3]);
 
 int main(void) {
 
+	/*==============================
+	  	  Declarations
+	================================*/
 	float my3DArray[3][3][3];
 	//int my2DArray[3][3];
 
@@ -24,6 +30,9 @@ int main(void) {
 	float e = 1;
 	double f=118.334, g=742;
 
+	/*==============================
+	   Load the array with numbers
+	================================*/
 		for (int a=0; a<3; a++){
 			for (int b=0; b<3; b++){
 				for (int c=0; c<3; c++){
@@ -34,6 +43,9 @@ int main(void) {
 
 		}
 
+		/*==============================
+		 	 Print the variables
+		================================*/
 		printf(" Initialised variables\n");
 		printf(" Number a (int): %d \n", a);
 		printf(" Number b (int): %d \n", b);
@@ -56,6 +68,9 @@ int main(void) {
 		printf("\n\n");
 		*/
 
+		/*==============================
+			Print the 3D array
+		================================*/
 		printf(" my3DArray is:");
 		for (int a=0; a<3; a++){
 			for (int b=0; b<3; b++){
@@ -69,6 +84,9 @@ int main(void) {
 		}
 		printf("\n\n");
 
+		/*=================================
+		Send the 3D array to the function
+		===================================*/
 		returnValue = array3D(my3DArray);
 		printf("\n Number returned to the function: %f \n\n", returnValue);
 
@@ -77,17 +95,24 @@ int main(void) {
 	return EXIT_SUCCESS;
 }
 
-
+/*==============================
+ * Array Function
+================================*/
 float array3D(float (*myA3)[3][3])  {
 
 	float num=0;
 	int numCnt=0;
 
-
+	/*==============================
+		Print first and last number
+	================================*/
 	printf(" First number in array3D: %f\n", myA3[0][0][0]);
 	printf(" Last number in array3D: %f\n", myA3[2][2][2]);
 	//printf(" Number in array3D: %f\n", myA3[0][0][2]);
 
+	/*==============================
+	Sum of numbers in the3D array
+	================================*/
 	for (int a=0; a<3; a++){
 		for (int b=0; b<3; b++){
 			for (int c=0; c<3; c++){
@@ -97,6 +122,9 @@ float array3D(float (*myA3)[3][3])  {
 		}
 	}
 
+	/*================================================
+	Print results and send mean back to function call
+	==================================================*/
 	printf(" Sum of the numbers in array3D: %f \n", num);
 	num=num/(float)numCnt;
 	printf(" How many numbers in array3D: %d \n", numCnt);
